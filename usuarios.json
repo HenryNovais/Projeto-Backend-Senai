@@ -1,0 +1,47 @@
+[
+    {
+        "id": "d9116a0f-6a9c-4783-a1be-1112e1fbc2c2",
+        "nome": "HENRY NOVAIS CALMON",
+        "cpf": "117.679.274-10",
+        "email": "henryncalmon05@gmail.com",
+        "idade": "19",
+        "senha": "$2b$12$x4foJOEirUuYvuuhXyJkXeBmDWAKfe560HhK.sFk1XXdFmHnkpMwi",
+        "perfil": "admin"
+    },
+    {
+        "id": "2d8f4204-64ce-4e7d-8297-0b070168f31e",
+        "nome": "HENRY NOVAIS CALMON",
+        "cpf": "117.679.274-10",
+        "email": "henryncalmon05@gmail.com",
+        "idade": "19",
+        "senha": "$2b$12$NyOUnF99WZ5iVgCMFflCWe4CsuyU2qjdtqTjXEAbIzZ0e89u/rxYS",
+        "perfil": "admin"
+    },
+    {
+        "id": "2543a907-5109-4584-b064-e7c12ed4c495",
+        "nome": "HENRY NOVAIS CALMON",
+        "cpf": "117.679.274-10",
+        "email": "henryncalmon05@gmail.com",
+        "idade": "19",
+        "senha": "$2b$12$w.3xKCIXiGL938bZdzhQ.Os8Un5nvrNrsJM6K3midYn6BrUxQcG2.",
+        "perfil": "admin"
+    },
+    {
+        "id": "a9f09c36-94a0-42c3-b8c9-5e93af1938f8",
+        "nome": "HENRY NOVAIS CALMON",
+        "cpf": "117.679.274-10",
+        "email": "henryncalmon05@gmail.com",
+        "idade": "19",
+        "senha": "$2b$12$copC3PoFa8IIMiSbsxKWXu0QORk9zBVWDxO8Lt//FBRj0QmiDI3eK",
+        "perfil": "admin"
+    },
+    {
+        "id": "219191a2-e39c-4e06-b47c-d2b88cc0132f",
+        "nome": "HENRY NOVAIS CALMON",
+        "cpf": "117.679.274-10",
+        "email": "henryncalmon05@gmail.com",
+        "idade": "19",
+        "senha": "$2b$12$yVLz3p.gEaaVrkheWIu.4OZ7grHJkipPXYqcP.pKw8sjspHtBxyz2",
+        "perfil": "admin"
+    }
+]

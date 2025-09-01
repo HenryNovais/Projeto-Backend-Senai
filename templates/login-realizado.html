@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Realizado</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Login de {{ usuario["nome"] }} realizado com sucesso!</h1>
+    <section>
+        <div class="opcoes">
+            <a href="/logout">Logout</a>
+            <a href="/usuarios/json">Acessar JSON</a>
+            
+            {% if usuario["perfil"] == "admin" %}
+                <a href="/admin">Área do Administrador</a>
+            {% endif %}
+        </div>
+    </section>
+</body>
+</html>
