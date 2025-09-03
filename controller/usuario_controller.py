@@ -24,6 +24,10 @@ def cadastrar_usuario():
     usuario = UsuarioService.cadastrar(dados)
     return render_template("cadastro_realizado.html", usuario=usuario)
 
+@usuario_bp.route("/cadastro-usuario", methods=["GET"])
+def cadastro_get():
+    return render_template("cadastro-usuario.html")
+
 # ---------- LOGIN / LOGOUT ---------- #
 @usuario_bp.route("/login", methods=["POST"])
 def login_post():
@@ -40,7 +44,7 @@ def login_post():
 @usuario_bp.route("/logout")
 def logout():
     session.clear()
-    return "Usuário deslogado!"
+    return render_template("index.html")
 
 # ---------- ROTAS PROTEGIDAS ---------- #
 @usuario_bp.route("/usuarios/json")
