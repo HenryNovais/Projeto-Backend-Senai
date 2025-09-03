@@ -1,22 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Realizado</title>
-    <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Virtual</title>
+  <link rel="stylesheet" href="/static/logado.css">
 </head>
 <body>
-    <h1>Login de {{ usuario["nome"] }} realizado com sucesso!</h1>
-    <section>
-        <div class="opcoes">
-            <a href="/logout">Logout</a>
-            <a href="/usuarios/json">Acessar JSON</a>
-            
-            {% if usuario["perfil"] == "admin" %}
-                <a href="/admin">Área do Administrador</a>
-            {% endif %}
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="/static/imgs/logoPadrao.svg" alt="Logo" style="margin-bottom: 20px;">
+    <h2>Descubra seu Livro</h2>
+    <ul>
+      <li>🏠 Início</li>
+      <li>📖 Expert Reader</li>
+      <li>📚 Acervo</li>
+    </ul>
+    <h2>Seu Acervo</h2>
+    <ul>
+      <li>❤️ Minhas Listas</li>
+      <li>⏸️ Continuar Lendo</li>
+      <li>📝 Cartões de Estudo</li>
+      <li>⭐ Destaques e Notas</li>
+      <li>📌 Sugestões de Leitura</li>
+      <li>✅ Livros Lidos</li>
+      <li>🎯 Metas de Leitura</li>
+    </ul>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="top-bar">
+      <div class="search-box">
+        <input type="text" placeholder="Digite o nome do livro ou autor(a) que deseja buscar">
+      </div>
+      <div>
+        <span style="margin-right: 15px;">⚙️ Configure sua meta</span>
+        <span>👤 {{usuario["nome"]}}</span>
+      </div>
+    </div>
+
+    <div class="suggestions">
+      <h3>Sugestões de leitura</h3>
+      <div class="books">
+        <div class="book">
+          <img src="https://via.placeholder.com/120x180?text=Hobbes" alt="Livro 1">
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <h4>10 Lições sobre Hobbes</h4>
+          <p>Fernando Magalhães</p>
         </div>
-    </section>
+
+        <div class="book">
+          <img src="https://via.placeholder.com/120x180?text=Chiavenato" alt="Livro 2">
+          <div class="stars">⭐⭐⭐☆☆</div>
+          <h4>Remuneração e Benefícios</h4>
+          <p>Cleyson de Moraes Mello</p>
+        </div>
+
+        <div class="book">
+          <img src="https://via.placeholder.com/120x180?text=Legislação" alt="Livro 3">
+          <div class="stars">⭐⭐⭐☆☆</div>
+          <h4>Legislação Ambiental</h4>
+          <p>Marcelo Testa</p>
+        </div>
+
+        <div class="book">
+          <img src="https://via.placeholder.com/120x180?text=Céu" alt="Livro 4">
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <h4>O Céu começa em você</h4>
+          <p>Anselm Grün</p>
+        </div>
+
+        <div class="book">
+          <img src="https://via.placeholder.com/120x180?text=Linguística" alt="Livro 5">
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <h4>Linguística, Ecologia e Ecolinguística</h4>
+          <p>Hildo Honório do Couto</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
