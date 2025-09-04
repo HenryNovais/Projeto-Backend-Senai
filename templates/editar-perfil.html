@@ -15,7 +15,9 @@
         <img src="/static/imgs/logoPadrao.svg" alt="Logo" style="margin-bottom: 20px;">
         <h2>Descubra seu Livro</h2>
         <ul>
-            <a href="/pagina-principal"><li><i class="bi bi-house-door"></i> Início</li></a>
+            <a href="/pagina-principal">
+                <li><i class="bi bi-house-door"></i> Início</li>
+            </a>
             <li><i class="bi bi-journal-text"></i> Expert Reader</li>
             <li><i class="bi bi-bookshelf"></i> Acervo</li>
         </ul>
@@ -29,10 +31,14 @@
             <li><i class="bi bi-clock-history"></i> Livros Lidos</li>
             <li><i class="bi bi-graph-up-arrow"></i> Metas de Leitura</li>
         </ul>
+        {% if session["perfil"] == "admin" %}
         <h2>Área do Administrador</h2>
         <ul>
-            <a href="/usuarios"><li style="background-color: #e6f0ff;"><i class="bi bi-eye"></i> Visualizar Usuários</li></a>
+            <a href="/usuarios">
+                <li><i class="bi bi-eye"></i> Visualizar Usuários</li>
+            </a>
         </ul>
+        {% endif %}
         
     </div>
 
@@ -65,6 +71,7 @@
                     <th>Ação</th>
                 </tr>
                 {% for usuario in usuarios %}
+                    {% if usuario["id"] == session["id_usuario"] %}
                 <tr id="linha-{{ usuario.id }}">
                     <td>{{ usuario["nome"] }}</td>
                     <td>{{ usuario["cpf"] }}</td>
@@ -94,6 +101,7 @@
                         </button>
                     </td>
                 </tr>
+                    {% endif %}
                 {% endfor %}
             </table>
 
@@ -107,7 +115,6 @@
                                 <th class="th-update">Email</th>
                                 <th class="th-update">Idade</th>
                                 <th class="th-update">CPF</th>
-                                <th class="th-update">Perfil</th>
                                 <th class="th-update">Ação</th>
                             </tr>
                         </thead>
@@ -118,7 +125,6 @@
                                 <td><input type="text" id="email" required></td>
                                 <td><input type="number" id="idade" required></td>
                                 <td><input type="text" id="cpf" required></td>
-                                <td><input type="text" id="perfil" required></td>
                                 <td>
                                     <button class="btn" title="Salvar" onclick="atualizarUsuario()" type="submit"
                                         id="btn-atualizar">

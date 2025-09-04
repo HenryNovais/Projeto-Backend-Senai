@@ -1,31 +1,30 @@
 function excluirUsuario(cpf, id) {
     if (!confirm(`Tem certeza que deseja excluir o usuário com CPF: ${cpf}?`)) {
-        return
+        return;
     }
 
     fetch(`/usuarios/${id}`, {
         method: 'DELETE'
     })
-        .then(response => {
-            return response.json().then(data => {
-                if (!response.ok) {
-                    throw new Error(data.erro || "Erro desconhecido")
-                }
-                return data
-            })
-        })
-        .then(data => {
-            alert(data.mensagem);
-            const linha = document.getElementById("linha-" + id)
-            if (linha) {
-                linha.remove()
+    .then(response => {
+        return response.json().then(data => {
+            if (!response.ok) {
+                throw new Error(data.erro || "Erro desconhecido");
             }
-        })
-        .catch(error => {
-            console.error("Erro na requisição", error)
-            alert("Erro ao excluir usuário" + error.message)
-        })
+            return data;
+        });
+    })
+    .then(data => {
+        alert(data.mensagem);
+        // Se for o usuário logado, redireciona para logout
+        window.location.href = "/logout";
+    })
+    .catch(error => {
+        console.error("Erro na requisição", error);
+        alert("Erro ao excluir usuário: " + error.message);
+    });
 }
+
 
 function preencherFormulario(button) {
     var container = document.querySelector(".container")
@@ -36,6 +35,7 @@ function preencherFormulario(button) {
     document.getElementById('email').value = usuario.email
     document.getElementById('idade').value = usuario.idade
     document.getElementById('cpf').value = usuario.cpf
+    document.getElementById('perfil').value = usuario.perfil
 }
 
 function atualizarUsuario() {
@@ -53,13 +53,15 @@ function atualizarUsuario() {
         const email = document.getElementById('email').value
         const idade = document.getElementById('idade').value
         const cpf = document.getElementById('cpf').value
+        const perfil = document.getElementById('perfil').value
 
         const usuario = {
             id: id,
             nome: nome,
             email: email,
             idade: idade,
-            cpf: cpf
+            cpf: cpf,
+            perfil : perfil
         }
 
         fetch(`/usuarios/`, {

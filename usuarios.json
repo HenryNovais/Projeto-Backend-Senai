@@ -1,38 +1,11 @@
 [
     {
-        "id": "c0229df4-25b9-42c5-993c-4d440d5a19a7",
-        "nome": "HENRY NOVAIS CALMON",
-        "cpf": "117.679.274-10",
-        "email": "henryncalmon05@gmail.com",
-        "idade": "45",
-        "senha": "$2b$12$wtsvNrZik.5Nof2fTsU//.9.tbfMjJEq70X6wJq3OIimGvbbpc5wC",
-        "perfil": "admin"
-    },
-    {
-        "id": "1a9947e1-8e64-43a9-ae18-9035911f3917",
+        "id": "cbe4ed4a-e482-4ae5-9329-b7bea8459a9d",
         "nome": "Fauto Silva",
         "cpf": "1224354465",
-        "email": "fausto@gmaul.com",
-        "idade": "88",
-        "senha": "$2b$12$19jF2/ruFAIc776ZNHZx8OMihEnpC9vZV7mCw7d0tE8s0AakgBj2O",
-        "perfil": "user"
-    },
-    {
-        "id": "896e55f8-cdb5-449b-aaa2-ade5723fc4a3",
-        "nome": "teste2",
-        "cpf": "2222222222222",
-        "email": "henryncalmon@gmail.com",
-        "idade": "66",
-        "senha": "$2b$12$HUKcPtUHlv2OZuknIeF4L.L6o4iFGXkGEmVJREV3dw6.nUvOnY9.2",
-        "perfil": "administrador"
-    },
-    {
-        "id": "bb647564-b267-47c6-9575-f2990508c77d",
-        "nome": "teste3",
-        "cpf": "4444444444444444",
-        "email": "teste@gmail.com",
-        "idade": "44",
-        "senha": "$2b$12$eYT9/wSbuDXMrI4lXMUD8.W3xmj1WSPIhDBkWohEPGLqAMIe2Q0Fy",
-        "perfil": "user"
+        "email": "fausto@gmail.com",
+        "idade": "90",
+        "senha": "$2b$12$aU0RwWf8KTwSCiD4x6F6QekpcOKzQbIYSV1c6B90psUSNDhH.SDRu",
+        "perfil": "admin"
     }
 ]

@@ -32,7 +32,7 @@ body {
   --overlay: linear-gradient(180deg, rgba(10,62,149,.95) 0%, rgba(10,62,149,.92) 40%, rgba(10,62,149,.86) 100%);
   background:
     var(--overlay),
-    url("bg-soft-blue.jpeg");
+    url("/static/imgs/background.jpeg");
   background-size: cover;
   background-position: center;
   color: #fff;

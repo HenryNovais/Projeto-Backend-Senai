@@ -16,7 +16,7 @@
         <img src="/static/imgs/logoPadrao.svg" alt="Logo" style="margin-bottom: 20px;">
         <h2>Descubra seu Livro</h2>
         <ul>
-            <li><i class="bi bi-house-door"></i> Início</li>
+            <a href="/pagina-principal"><li><i class="bi bi-house-door"></i> Início</li></a>
             <li><i class="bi bi-journal-text"></i> Expert Reader</li>
             <li><i class="bi bi-bookshelf"></i> Acervo</li>
         </ul>
@@ -46,9 +46,12 @@
             <div class="search-box">
                 <input type="text" placeholder="Digite o nome do livro ou autor(a) que deseja buscar"> <i class="bi bi-search"></i>
             </div>
-            <div>
+            <div class="user" style="display: flex;">
                 <span style="margin-right: 15px;"><i class="bi bi-gear"></i> Configure sua meta</span>
-                <span style="margin-right: 15px;"><i class="bi bi-person-circle"></i> {{session["nome"]}}</span>
+                <details style="margin-right: 15px;">
+                    <summary style="cursor: pointer;"><i class="bi bi-person-circle"></i> {{session["nome"]}}</summary>
+                    <a href="/editar-perfil" style="background-color: rgb(7, 72, 211); border-radius: 10px; padding: 5px;">Configurar Perfil</a>
+                </details>
                 <span><a href="/logout"><i class="bi bi-box-arrow-right"></i> Logout</a></span>
             </div>
         </div>
