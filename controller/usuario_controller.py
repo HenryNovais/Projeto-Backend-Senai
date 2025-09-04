@@ -63,7 +63,7 @@ def buscar_usuarios():
     if session["perfil"] != "admin":
         return "Acesso negado. Área de administração.", 401
     usuarios = UsuarioService.listar()
-    return render_template("usuarios.html", usuarios=usuarios)
+    return render_template("area_admin.html", usuarios=usuarios)
 
 @usuario_bp.route("/usuarios/<id>", methods=["DELETE"])
 def excluir_usuario(id):
