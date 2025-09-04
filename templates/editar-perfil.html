@@ -117,7 +117,9 @@
                                 <th class="th-update">Email</th>
                                 <th class="th-update">Idade</th>
                                 <th class="th-update">CPF</th>
-                                <th class="th-update">Perfil</th>
+                                {% if session["perfil"] == "admin" %}
+                                    <th class="th-update">Perfil</th>
+                                {% endif %}
                                 <th class="th-update">Ação</th>
                             </tr>
                         </thead>
@@ -128,12 +130,14 @@
                                 <td><input type="text" id="email" required></td>
                                 <td><input type="number" id="idade" required></td>
                                 <td><input type="text" id="cpf" required></td>
+                                {% if session["perfil"] == "admin" %}
                                 <td>
                                     <select id="perfil" required>
                                         <option value="admin">Admin</option>
                                         <option value="user">Usuário</option>
                                     </select>
                                 </td>
+                                {% endif %}
                                 <td>
                                     <button class="btn" title="Salvar" type="submit" id="btn-atualizar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
