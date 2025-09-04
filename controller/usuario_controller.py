@@ -5,7 +5,7 @@ usuario_bp = Blueprint("usuario", __name__)
 
 @usuario_bp.route("/")
 def home():
-    return render_template("cadastro-usuario.html")
+    return render_template("index.html")
 
 @usuario_bp.route("/login")
 def login_get():
@@ -22,7 +22,7 @@ def cadastrar_usuario():
         "perfil": request.form.get("perfil", "user")
     }
     usuario = UsuarioService.cadastrar(dados)
-    return render_template("cadastro_realizado.html", usuario=usuario)
+    return render_template("index.html", usuario=usuario)
 
 @usuario_bp.route("/cadastro-usuario", methods=["GET"])
 def cadastro_get():
@@ -38,6 +38,7 @@ def login_post():
     if usuario:
         session["id_usuario"] = usuario["id"]
         session["perfil"] = usuario["perfil"]
+        session["nome"] = usuario["nome"]
         return render_template("login-realizado.html", usuario=usuario)
     return "Email ou senha inválidos", 401
 
