@@ -39,6 +39,9 @@ def login_post():
         session["id_usuario"] = usuario["id"]
         session["perfil"] = usuario["perfil"]
         session["nome"] = usuario["nome"]
+        session["email"] = usuario["email"]
+        session["cpf"] = usuario["cpf"]
+        session["idade"] = usuario["idade"]
         return render_template("pagina_principal.html", usuario=usuario)
     return "Email ou senha inválidos", 401
 
@@ -60,18 +63,28 @@ def buscar_usuarios_json():
 def buscar_usuarios():
     if "id_usuario" not in session:
         return "Acesso negado. Faça login.", 401
-    if session["perfil"] != "admin":
-        return "Acesso negado. Área de administração.", 401
-    usuarios = UsuarioService.listar()
-    return render_template("area_admin.html", usuarios=usuarios)
+    usuarios = UsuarioService.listar()    
+    if session["perfil"] == "admin":
+        return render_template("area-admin.html", usuarios=usuarios)
+    else:
+        return render_template("editar-perfil.html", usuarios=usuarios)
+    
+
+@usuario_bp.route("/editar-perfil")
+def editar_perfil():
+    usuarios = UsuarioService.listar()    
+    return render_template("editar-perfil.html", usuarios=usuarios)
+    
 
 @usuario_bp.route("/usuarios/<id>", methods=["DELETE"])
 def excluir_usuario(id):
-    if session.get("perfil") != "admin":
-        return "Acesso negado. Apenas administradores podem deletar usuários.", 403
     if UsuarioService.deletar(id):
         return jsonify({"mensagem": "Usuário deletado com sucesso."}), 200
     return jsonify({"erro": "Usuário não encontrado."}), 404
+
+@usuario_bp.route("/pagina-principal")
+def pag_principal():
+    return render_template("pagina_principal.html")
 
 @usuario_bp.route("/usuarios/", methods=["PUT"])
 def atualizar_usuario():
