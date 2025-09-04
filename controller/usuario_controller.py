@@ -39,7 +39,7 @@ def login_post():
         session["id_usuario"] = usuario["id"]
         session["perfil"] = usuario["perfil"]
         session["nome"] = usuario["nome"]
-        return render_template("login-realizado.html", usuario=usuario)
+        return render_template("pagina_principal.html", usuario=usuario)
     return "Email ou senha inválidos", 401
 
 @usuario_bp.route("/logout")
