@@ -1,6 +1,7 @@
 function excluirUsuario(cpf, id) {
     if (!confirm(`Tem certeza que deseja excluir o usuário com CPF: ${cpf}?`)) {
         return;
+        
     }
 
     fetch(`/usuarios/${id}`, {
