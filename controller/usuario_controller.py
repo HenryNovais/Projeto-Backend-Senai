@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from service.usuario_service import UsuarioService
 
+
 usuario_bp = Blueprint("usuario", __name__)
 
 @usuario_bp.route("/")
